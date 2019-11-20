@@ -7,9 +7,9 @@ const Cell = ({openState, cellClick, cellIndex}) => {
         <div 
             className={openState ? 'cell open' : 'cell close'} 
             onClick={openState ? null : cellClick(cellIndex)}
-    >
-    </div>
+        >
+        </div>
     )
 } 
 
-export default Cell;
+export default Cell

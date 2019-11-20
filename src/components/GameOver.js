@@ -10,7 +10,7 @@ const GameOver = ({playerScore, gameState}) => {
 
     return (
         <div>
-            <p className='message'>{message}</p>
+            <p className='message'>{ message }</p>
             <ButtonNewGame />
         </div>
     )

@@ -14,7 +14,7 @@ const Grid = ({cellState, playerScore, cellClickHandler}) => {
             <div className='grid'>
                 {
                     cellState.map((cell, i) => {
-                        if (i !== 0 && (i + 1) % (CONFIG.GRID_ROWS ) === 0) {
+                        if (i !== 0 && (i + 1) % (CONFIG.GRID_ROWS ) === 0) { // rightmost column, add solver cells
                             return (
                                 <Fragment key={i}>
                                     <Cell 
@@ -31,7 +31,7 @@ const Grid = ({cellState, playerScore, cellClickHandler}) => {
                                 </Fragment>
                             )
                         }
-                        return (
+                        return ( // regular cell
                             <Cell 
                                 openState={cell.clicked} 
                                 cellClick={cellClickHandler} 
@@ -43,7 +43,7 @@ const Grid = ({cellState, playerScore, cellClickHandler}) => {
                     })
                 }
                 {
-                    solverBottomFill.map((_, i) => (
+                    solverBottomFill.map((_, i) => ( // fill bottom row solver cells
                         <SolverCell 
                             isRow={false}
                             idx={i}

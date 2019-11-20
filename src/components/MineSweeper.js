@@ -12,27 +12,28 @@ import GameOver from './GameOver'
 import Grid from './Grid'
 
 const MineSweeper = ({playerScore, cellState, gameState, onCellClick}) => {
-    if (gameState === GAME_STATES.IDLE) {
-        return (
-            <ButtonNewGame />
-        )
+    switch (gameState) {
+        case GAME_STATES.IDLE:
+            return (
+                <ButtonNewGame />
+            )
+        case GAME_STATES.WON:
+        case GAME_STATES.LOST:
+            return (
+                <GameOver 
+                    gameState={gameState}
+                    playerScore={playerScore}
+                />
+            )
+        default:
+            return (    
+                <Grid
+                    cellState={cellState}
+                    playerScore={playerScore}
+                    cellClickHandler={onCellClick}
+                />
+            )    
     }
-    if ( gameState === GAME_STATES.WON 
-        || gameState === GAME_STATES.LOST) {
-        return (
-            <GameOver 
-                gameState={gameState}
-                playerScore={playerScore}
-            />
-        )
-    }
-    return (    
-        <Grid
-            cellState={cellState}
-            playerScore={playerScore}
-            cellClickHandler={onCellClick}
-        />
-    )    
 }
            
 const mapStateToProps = state => ({
