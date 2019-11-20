@@ -1,22 +1,124 @@
-.App {
+
+/*
+** base
+*/
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+/*
+** grid
+*/
+
+.container {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-gap: 4px;
+  background-color: #fff;
+  color: #444;
+  width: 100%;
+  height: 100%;
+}
+
+/* 
+** cells 
+*/
+
+.cell {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  border-radius: 4px;
+}
+
+.open {
+  background-color: #efefef;
+}
+
+.close {
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.close:hover {
+  background-color: lightcoral;
+}
+
+.solver {
+  background-color: darkmagenta;
+}
+
+.solver span {
+  display: block;
+  height: 20px;
+  padding: 20px 0;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  font-size: 1rem;
+  cursor: default;
 }
 
-.App-link {
-  color: #09d3ac;
+/* game start button */
+
+.btn-start-game {
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1.375rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 40px;
+  background-color: black;
+  color: white;
+  display: block;
+  margin: 0 auto;
+  width: 140px;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-start-game:hover {
+  background-color: darkred;
+}
+
+/*
+** player score 
+*/
+
+.player-score {
+  text-transform: uppercase;
+  font-size: 1.375rem;
+}
+
+.score-value {
+  font-weight: bold;
+  color: darkred;
+}
+
+
+/*
+** winner / loser message
+*/
+
+.message {
+  font-size: 26px;
+  padding: 20px 0;
 }
