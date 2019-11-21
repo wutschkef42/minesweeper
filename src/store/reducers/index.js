@@ -42,7 +42,7 @@ const placeTreasuresAndBombs = (rows, cols) => {
     for (let i = 0; i < CONFIG.BOMB_COUNT; i++) {
         let idx = Math.floor(Math.random() * CONFIG.GRID_COLS * CONFIG.GRID_ROWS)
         totalPoints -= cells[idx].content
-        cells[idx].content = 0
+        cells[idx].content = BOMB
     }
     return cells
 }

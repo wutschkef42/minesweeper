@@ -5,8 +5,8 @@ import { GAME_STATES } from '../store/actions'
 
 const GameOver = ({playerScore, gameState}) => {
     const message = gameState === GAME_STATES.WON
-        ? 'Congratulations, you win with ' + playerScore + ' points!'
-        : 'You touched a bomb, you lose with ' + playerScore + ' points!'
+        ? 'Congratulations, you WIN with ' + playerScore + ' points!'
+        : 'You touched a bomb, you LOSE with ' + playerScore + ' points!'
 
     return (
         <div>

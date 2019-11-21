@@ -1,12 +1,7 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import { 
-    clickCell, 
-    initCellState, 
-    setGameState, 
-    GAME_STATES
-} from '../store/actions'
+import { clickCell, GAME_STATES } from '../store/actions'
 import ButtonNewGame from './ButtonNewGame'
 import GameOver from './GameOver'
 import Grid from './Grid'
@@ -44,9 +39,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
     return {
-        onCellClick: idx => () => dispatch(clickCell(idx)),
-        onStartGame: () => dispatch(setGameState(GAME_STATES.ACTIVE)),
-        onInitGame: () => dispatch(initCellState())
+        onCellClick: idx => () => dispatch(clickCell(idx))
     }
 }
 

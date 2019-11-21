@@ -1,5 +1,4 @@
 
-
 /*
 ** board dimensions
 */
@@ -19,7 +18,6 @@ const GRID_PAD = 10
 
 const CELL_SIZE = 40
 
-
 /*
 ** number of points required to win
 */
@@ -31,7 +29,6 @@ const MAX_SCORE = 45
 const MAX_POINTS_PER_CELL = 3
 
 const BOMB_COUNT = 5
-
 
 const CONFIG  = {
     GRID_ROWS, 
